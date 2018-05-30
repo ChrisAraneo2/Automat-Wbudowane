@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,notitlepage]{report}
+\documentclass[12pt,a4paper,notitlepage]{article}
 \usepackage{polski}
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}
@@ -165,16 +165,16 @@ Pojemnik do gotowania ziemniaków/kaszy/makaronu oraz stojak na garnek wykorzyst
 Użytkownik uzupełnia pojemnik, jeżeli ten zawiera niewystarczającą ilość wody (informacja podawana na głównym wyświetlaczu automatu).
 
 \subsubsection{Komunikacja z komputerem}
-Przyjmowane polecenia: rozkaz odczytu objętości wody, polecenie o napełnienie innych pojemników wodą z tego pojemnika.\\
-Wysyłane dane: zmierzona objętość wody w pojemniku.
+\textbf{Przyjmowane polecenia}: rozkaz odczytu objętości wody, polecenie o napełnienie innych pojemników wodą z tego pojemnika.\\
+\textbf{Wysyłane dane}: zmierzona objętość wody w pojemniku, otwarte/zamknięte zawory.
 
 \subsubsection{Awarie i sytuacje wyjątkowe}
 \begin{enumerate}
-  \item Brak wody\\
+  \item \textbf{Brak wody}\\
 Brak wody w pojemniku nie jest sytuacją krytyczną, ale uniemożliwia uruchomienie gotowania. W przypadku braku wody w zbiorniku użytkownik jest o tym informowany, musi uzupełnić wodę w zbiorniku.
-  \item Uszkodzenie zaworów\\
+  \item \textbf{Uszkodzenie zaworów}\\
 W wyniku uszkodzenia zaworów elektromagnetycznych nie ma możliwości napełnienia wodą innych pojemników. Komputer w takiej sytuacji powinien wyświetlić informację o uszkodzeniu zaworów. W najgorszym przypadku awarii zaworów komputer "nie zauważy" awarii zaworów, ale w powodu braku/nadmiaru wody w innych pojemnikach wyświetli informacje o nieprawidłowym działaniu automatu. Automat należy oddać do serwisu.
-  \item Brak połączenia\\
+  \item \textbf{Uszkodzenie przewodów}\\
 W przypadku uszkodzenia przewodów zasilających komponent czy uszkodzenia połączenia z komputerem automat musi być oddany do serwisu.
 \end{enumerate}
 
@@ -207,28 +207,27 @@ Przetworzone składniki są usuwane z pojemników dzięki zapadni w podstawie i 
 Użytkownik uzupełnia pojemnik odpowiednimi składnikami według instrukcji na ekranie głównym. Po procesie gotowania użytkownik wyjmuje cały pojemnik, usuwa z niego resztki składników i myje przed kolejnym użyciem automatu.
 
 \subsubsection{Komunikacja z komputerem}
-Przyjmowane polecenia: rozkaz odczytu wagi składników, rozkaz wyświetlenia informacji na ekranie LCD pojemnika, otwarcie/zamknięcie górnej przykrywki, otwarcie/zamknięcie zapadni, uruchomienie/zatrzymanie ostrzy.\\
-Wysyłane dane: otwarty/zamknięty pojemnik, zmierzona waga składników wewnątrz pojemnika.
+\textbf{Przyjmowane polecenia}: rozkaz odczytu wagi składników, rozkaz wyświetlenia informacji na ekranie LCD pojemnika, otwarcie/zamknięcie górnej przykrywki, otwarcie/zamknięcie zapadni, uruchomienie/zatrzymanie ostrzy.\\
+\textbf{Wysyłane dane}: otwarty/zamknięty pojemnik, zmierzona waga składników wewnątrz pojemnika.
 
 \subsubsection{Diagram stanów}
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio=true]{Diagram-stanow-pojemnik.pdf}
 
 \subsubsection{Awarie i sytuacje wyjątkowe}
 \begin{enumerate}
-  \item Uszkodzone ostrza/niedziałający silnik\\
-System nie posiada czujników określających uszkodzenie silnika/ostrzy w pojemniku. Jeżeli ostrza są 
-  \item Uszkodzenie systemu wysuwania blokady przykrywki\\
+  \item \textbf{Uszkodzone ostrza/niedziałający silnik}\\
+System nie posiada czujników określających uszkodzenie silnika/ostrzy w pojemniku. Jeżeli składniki nie zostaną pokrojone to spadną całe do garnka.
+  \item \textbf{Uszkodzenie systemu wysuwania blokady przykrywki}\\
 W wyniku uszkodzenia mechanizmu zamknięcia pojemnika zamknięcie zostaje odblokowane, w miarę możliwości otwarte. Komputer dostaje informacje o niezamkniętym pojemniku i wstrzymuje działanie automatu do momentu naprawienia.
-  \item Awaria wagi\\
+  \item \textbf{Awaria wagi}\\
 Gdy nastąpi awaria wagi komputer nie otrzyma informacji o wadze składników w pojemniku. Zostanie wyświetlone ostrzeżenie na głównym wyświetlaczu. Proces gotowania zupy może być kontynuowany.
-  \item Uszkodzenie systemu wysunięcia podstawy\\
+  \item \textbf{Uszkodzenie mechanizmu wysuwania podstawy}\\
 W wyniku uszkodzenia mechanizmu otwierania spodu pojemnika zapadnia zostaje otwarta, jeżeli jest to możliwe. Komputer dostaje informacje o usterce.
-  \item Uszkodzenie wyświetlacza\\
+  \item \textbf{Uszkodzenie wyświetlacza}\\
 Ta usterka nie wpływa znacząco na proces użytkowania automatu.
-  \item Brak połączenia\\
+  \item \textbf{Uszkodzenie przewodów}\\
 W przypadku uszkodzenia przewodów zasilających komponent czy uszkodzenia połączenia z komputerem automat musi być oddany do serwisu.
 \end{enumerate}
-
 
 
 \subsection{Pojemniki na składniki (bez ostrzy)}
@@ -256,14 +255,14 @@ Składniki są usuwane z pojemników dzięki wsuwanej podstawie i trafiają do g
 Użytkownik uzupełnia pojemnik odpowiednimi składnikami według instrukcji na ekranie głównym. Po procesie gotowania użytkownik wyjmuje cały pojemnik, usuwa z niego resztki składników i myje przed kolejnym użyciem automatu.
 
 \subsubsection{Komunikacja z komputerem}
-Przyjmowane polecenia: rozkaz odczytu wagi składników, rozkaz wyświetlenia informacji na ekranie LCD pojemnika, otwarcie/zamknięcie górnej przykrywki, otwarcie/zamknięcie zapadni.\\
-Wysyłane dane: zmierzona waga składników wewnątrz pojemnika.
+\textbf{Przyjmowane polecenia}: rozkaz odczytu wagi składników, rozkaz wyświetlenia informacji na ekranie LCD pojemnika, otwarcie/zamknięcie górnej przykrywki, otwarcie/zamknięcie zapadni.\\
+\textbf{Wysyłane dane}: otwarty/zamknięty pojemnik, zmierzona waga składników wewnątrz pojemnika.
 
 \subsubsection{Diagram stanów}
 \emph{Diagram stanów taki sam, jak dla pojemnika na składniki z ostrzami.}
 
 \subsubsection{Awarie i sytuacje wyjątkowe}
-. . . To Do . . .
+\emph{Opis awarii i sytuacji wyjątkowych podobny jak dla pojemnika na składniki z ostrzami.}
 
 
 
@@ -290,35 +289,34 @@ Przyprawy zrzucane pojemnika dzięki wsuwanej podstawie i trafiają do garnka st
 Użytkownik uzupełnia pojemnik odpowiednimi przyprawami według instrukcji na ekranie głównym. Po procesie gotowania zalecane jest aby użytkownik wyczyścił pudełko.
 
 \subsubsection{Komunikacja z komputerem}
-Przyjmowane polecenia: rozkaz odczytu wagi składników, otwarcie/zamknięcie zapadni.\\
-Wysyłane dane: zmierzona waga przypraw wewnątrz pojemnika.
+\textbf{Przyjmowane polecenia}: rozkaz odczytu wagi składników, otwarcie/zamknięcie zapadni.\\
+\textbf{Wysyłane dane}: zmierzona waga przypraw wewnątrz pojemnika.
 
 \subsubsection{Diagram stanów}
 \emph{Diagram stanów taki sam, jak dla pojemnika na składniki z ostrzami.}
 
 \subsubsection{Awarie i sytuacje wyjątkowe}
-. . . To Do . . .
-
+\emph{Opis awarii i sytuacji wyjątkowych podobny jak dla pojemnika na składniki z ostrzami.}
 
 
 \subsection{Pojemnik do gotowania ziemniaków/kaszy/makaronu}
 \subsubsection{Spis podzespołów komponentu}
 \begin{enumerate}
   \item Akrylowa przykrywka
-  \item Grzejnik
+  \item Dwie grzałki elektryczne
   \item Termometr
   \item Waga z czujnikiem tensometrycznym
-  \item Zapadnia
   \item Zawór elektromagnetyczny do spuszczania wody
+  \item Zapadnia (na ziemniaki/makaron/kaszę)
   \item Połączenie z komputerem
   \item Podłączenie do zasilania
 \end{enumerate}
 
 \subsubsection{Dokładniejszy opis budowy i funkcjonalność}
-Pojemnik służy do gotowania ziemniaków/kaszy/makaronu lub innych produktów wymagających zagotowanie. Metalowy, nierdzewny pojemnik o pojemności 2L. Posiada akrylową przykrywkę. Jest wyposażony w serwomechanizmy otwierające zapadnię, kładące akrylową przykrywkę. Wewnątrz posiada grzejnik - dwie grzałki elektryczne. Posiada termometr. Ma wbudowany czujnik tensometryczny, o zakresie miary ciężaru 0-5kg (element wagi). Czujnik jest podłączony do przetwornika analogowo-cyfrowego, który połączony jest z komputerem jako \emph{slave}. Posiada zapadnię.
+Pojemnik służy do gotowania ziemniaków/kaszy/makaronu lub innych produktów wymagających zagotowanie. Metalowy, nierdzewny pojemnik o pojemności 2L. Posiada akrylową przykrywkę. Jest wyposażony w serwomechanizmy kładące akrylową przykrywkę (z niewielkim otworem na wydostanie się pary wodnej), otwierające zapadnię. Wewnątrz posiada grzejnik - dwie grzałki elektryczne. Posiada moduł termometru o zakresie pomiarowym od -50\degree C do 290\degree C. Ma wbudowany czujnik tensometryczny, o zakresie miary ciężaru 0-5kg (element wagi). Czujnik jest podłączony do przetwornika analogowo-cyfrowego, który połączony jest z komputerem jako \emph{slave}. Posiada zapadnię.
  
 \subsubsection{Wykorzystanie i relacje z podzespołami}
-Ma wbudowaną wagę służącą do oszacowania ilości wody przed rozpoczęciem gotowania oraz wagi ziemniaków po włożeniu do pojemnika. Posiada zapadnię do odlania brudnej wody. Za pomocą termometru sprawdza temperaturę wody. Wymaga podłączenia do sieci elektrycznej. Duże zużycie energii ze względu na wykorzystanie grzałek do zagotowania wody.
+Ma wbudowaną wagę służącą do oszacowania ilości wody przed rozpoczęciem gotowania oraz wagi ziemniaków po włożeniu do pojemnika. Posiada zawory do odlania brudnej wody. Zawiera zapadnię do przeładowania składników do garnka. Za pomocą termometru sprawdza temperaturę wody. Wymaga podłączenia do sieci elektrycznej. Duże zużycie energii ze względu na wykorzystanie grzałek do zagotowania wody.
 
 \subsubsection{Relacje z innymi komponentami}
 Ma połączenie ze zbiornikiem na wodę oraz ze zbiornikiem na wodę po gotowaniu. Jest napełniany wodą ze zbiornika na wodę. Gorącą, niezdatną do spożycia wodę wylewa przewodami do pojemnika na wodę po gotowaniu.
@@ -327,14 +325,26 @@ Ma połączenie ze zbiornikiem na wodę oraz ze zbiornikiem na wodę po gotowani
 Użytkownik wkłada do środka odpowiednie składniki np. makaron, obrane ziemniaki.
 
 \subsubsection{Komunikacja z komputerem}
-Przyjmowane polecenia: otwórz/zamknij pokrywkę, uruchom/wyłącz grzejnik, otwórz/zamknij zapadnię, sprawdź temperaturę wody, sprawdź wagę wody/składników\\
-Wysyłane dane: temperatura wody, waga.
+\textbf{Przyjmowane polecenia}: otwórz/zamknij pokrywkę, uruchom/wyłącz grzejnik, otwórz/zamknij zapadnię, sprawdź temperaturę wody, sprawdź wagę wody/składników\\
+\textbf{Wysyłane dane}: temperatura wody, waga.
 
 \subsubsection{Diagram stanów}
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio=true]{Diagram-stanow-pojemnik-na-ziemniaki.pdf}
 
 \subsubsection{Awarie i sytuacje wyjątkowe}
-. . . To Do . . .
+\begin{enumerate}
+  \item \textbf{Awaria mechanizmu otwierania zapadni czy kładzenia przykrywki}
+W przypadku awarii mechanizmu kładzenia przykrywki, lub uszkodzenia przykrywki, automat kontynuuje gotowanie wody. Natomiast gdy zapadnia na ugotowane składniki nie działa prawidłowo komputer rozpoznaje problem poprzez pomiar wagi zawartości pojemnika po gotowaniu. Wyświetlany jest błąd, sugerowane jest oddanie automatu do serwisu.
+  \item \textbf{Nie działające grzałki}
+Jeżeli grzałki nie działają, to komputer odkrywa ten problem dzięki sprawdzeniu temperatury wody. Wyświetlany jest błąd, sugerowane jest oddanie automatu do serwisu.
+  \item \textbf{Niesprawny termometr}
+W momencie gdy moduł termometru jest niesprawny komputer nie otrzymuje odpowiedzi od komponentu na temat temperatury wody. W tym przypadku wyświetlany jest błąd i sugerowane jest oddanie automatu do naprawy w serwisie.
+  \item \textbf{Uszkodzenie przewodów}\\
+W przypadku uszkodzenia zaworów odprowadzających brudną wodę, komputer dowiaduje się o tym sprawdzając wagę zawartości pojemnika po poleceniu otwarcia zaworów. Jeżeli waga jest nieprawidłowa przerywany jest proces gotowania. Wyświetlany jest komunikat błędu. Należy oddać urządzenie do naprawy.
+  \item \textbf{Uszkodzenie przewodów}\\
+W przypadku uszkodzenia przewodów zasilających komponent czy uszkodzenia połączenia z komputerem automat musi być oddany do serwisu.
+\end{enumerate}
+
 
 
 
@@ -359,11 +369,15 @@ Do tego pojemnika spływa niezdatna do picia gorąca woda po gotowaniu.
 Użytkownik opróżnia pojemnik, gdy ten jest pełny. Zostanie o tym poinformowany poprzez komunikat na ekranie głównym.
 
 \subsubsection{Komunikacja z komputerem}
-Przyjmowane polecenia: rozkaz uruchomienia sensora wody i sprawdzenia poziomu wody.\\
-Wysyłane dane: czy woda osiągnęła określony poziom krytyczny.
+\textbf{Przyjmowane polecenia}: rozkaz uruchomienia sensora wody i sprawdzenia poziomu wody.\\
+\textbf{Wysyłane dane}: czy woda osiągnęła określony poziom krytyczny.
 
 \subsubsection{Awarie i sytuacje wyjątkowe}
-. . . To Do . . .
+\begin{enumerate}
+
+  \item \textbf{Uszkodzenie przewodów}\\
+W przypadku uszkodzenia przewodów zasilających komponent czy uszkodzenia połączenia z komputerem automat musi być oddany do serwisu.
+\end{enumerate}
 
 
 
@@ -506,11 +520,11 @@ Nie mam pojecia
 Komputer komunikuje się z pozostałymi komponentami protokołem I$^2$C, gdzie urządzeniem typu \emph{master} jest komputer, a urządzeniami typu \emph{slave} są czujniki i urządzenia wykonawcze.
 
 \section{Aplikacja mobilna}
-\subsubsection{Konfiguracja aplikacji}
+\subsection{Konfiguracja aplikacji}
 Aplikacja mobilna jest dostępna za darmo na system Android oraz iOS. Użytkownik posiadający automat "sparowuje" z nim aplikację w urządzeniu mobilnym. Ustawia też 8-znakowe hasło, które wymagane jest do uwierzytelnienia.
-\subsubsection{Zdalne uruchamianie procesu gotowania}
+\subsection{Zdalne uruchamianie procesu gotowania}
 Aplikacja mobilna służy przede wszystkim do zdalnego uruchamiania gotowania w urządzeniu. Po zalogowaniu w aplikacji użytkownik może zdalnie uruchomić gotowanie zupy. Można ustawić start gotowania na określoną godzinę lub ustawić opóźnienie np. zacznij gotowanie za 10 minut. Wymagany jest dostęp do internetu.
-\subsubsection{Edytor przepisów}
+\subsection{Edytor przepisów}
 Aplikacja posiada także możliwość tworzenia i modyfikacji przepisów a następnie wysyłania na serwer a następnie do automatu w formacie JSON. Można również wysłać przepis do serwisu z przepisami, który po zaakceptowaniu przez administrację będzie widoczny przez wszystkich użytkowników na stronie internetowej.
 
 \end{document}
