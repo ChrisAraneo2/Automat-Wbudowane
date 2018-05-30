@@ -118,6 +118,14 @@ Po zakończonym gotowaniu na głównym wyświetlaczu ukazuje się przypomnienie 
 
 \includegraphics[scale=0.16,width=\textwidth,height=\textheight,keepaspectratio=true]{Diagram-stanow-urzadzenie.pdf}
 
+\subsection{Opis niektórych stanów}
+%\paragraph{uruchamianie komputera i przygotowywanie maszyny} - uruchamianie mikrokontrolera i 
+\paragraph{Sprawdzanie czy...} - sprawdzanie warunków okrelonych do poprawnego rozpoczęcia gotowania: czy zbiornik z wodą posiada odpowiednią ilosć wody do gotowania i czy pojemnik na brudną wodę nie jest zapełniony. Maszyna może sprawdzać też inne warunki, np. czy wysuwane pokrywki są w odpowiednim miejscu, czujniki wysyłają odpowiednie sygnały. Jeżeli te warunki nie są spełnione, urządzenie pozostaje w tym stanie i informuje o tym. Po włożeniu pojemnika, warunki są sprawdzane ponownie i jeżeli są spełnione, maszyna wchodzi do stanu przygotowania do gotowania.
+\paragraph{urządzenie gotowe do gotowania} - funkcjonowanie urządzenia jest warunkowane przez interfejs (patrz diagram stanów interfejsu).
+\paragraph{gotowanie ziemniaków/kaszy w pojemniku} - patrz diagram stanów pojemnika do gotowania ziemniaków/kaszy/makaronu.
+\paragraph{awaryjne zakończenie} - na ekranie wywietlana jest informacja o nieplanowanym zakończeniu pracy maszyny. Maszyna przechodzi do następnego stanu jeżeli: składniki z pojemników zostaną wyjęte, komputer otrzyma sygnał zatwiedzenia z interfejsu.
+\paragraph{urządzenie gotowe do odebrana zupy} - na ekranie wywietlana jest informacja o nieplanowanym zakończeniu pracy maszyny. Maszyna przechodzi do następnego stanu jeżeli komputer otrzyma sygnał zatwiedzenia z interfejsu.
+
 
 \newpage
 \section{Komponenty systemu}
@@ -304,7 +312,7 @@ Użytkownik uzupełnia pojemnik odpowiednimi przyprawami według instrukcji na e
 \begin{enumerate}
   \item Akrylowa przykrywka
   \item Dwie grzałki elektryczne
-  \item Termometr
+  \item Termometr (dołączony do przykrywki)
   \item Waga z czujnikiem tensometrycznym
   \item Zawór elektromagnetyczny do spuszczania wody
   \item Zapadnia (na ziemniaki/makaron/kaszę)
@@ -438,6 +446,7 @@ Opis i działanie komputera jako głównej jednostki obliczeniowej i sterującej
   \item Przycisk Dół
   \item Przysisk Wtecz
   \item Przycisk Wyłącz/Włącz automat
+  \item Lampka awaryjna
   \item Połączenie z komputerem
   \item Połączenie do zasilania
 \end{enumerate}
@@ -446,7 +455,7 @@ Opis i działanie komputera jako głównej jednostki obliczeniowej i sterującej
 Główny interfejs to ekran oraz wbudowane przyciski. PDA - TM7000 -  Ekran dotykowy, seria PDA, LCD kolorowy, 800 x 480, działa we współpracy z procesorem Atmel AVR. Ustawiony jest w pozycji wertykalnej. Na dolnej części obudowy ekranu znajdują się przyciski, takie jak w spisie powyżej.
  
 \subsubsection{Wykorzystanie i relacje z podzespołami}
-Przyciski na ekranie służą wysyłaniu sygnałów do komputera. Celem ekranu dotykowego jest ergonomiczność i prostota korzystania z automatu dla użytkownika.
+Przyciski na ekranie służą wysyłaniu sygnałów do komputera. Celem ekranu dotykowego jest ergonomiczność i prostota korzystania z automatu dla użytkownika. 
 
 \subsubsection{Relacje z innymi komponentami}
 Interfejs nie ma połączenia z innymi komponentami, oprócz komputera.
@@ -480,7 +489,11 @@ Opis niektórych stanów:
 \normalsize
 
 \subsubsection{Awarie i sytuacje wyjątkowe}
-. . . To Do . . .
+\begin{enumerate}
+  \item \textbf{Brak sygnału z ekranu dotykowego}\\ wyswietla się informacja o braku sygnału z wyswietlacza dotykowego. Zalecane oddanie maszyny do serwisu.
+  \item \textbf{Brak sygnału z przycisku}\\ wyswietla się informacja o braku sygnału z przycisku. Zalecane oddanie maszyny do serwisu.
+\end{enumerate}
+
 
 
 
@@ -505,18 +518,9 @@ Głośnik nie ma połączenia z innymi komponentami, oprócz komputera.
 \subsubsection{Relacje z użytkownikiem automatu}
 Użytkownik słyszy sygnał zakończenia gotowania.
 
-
-%\subsubsection{Wykorzystane podzespoły}
-%\begin{itemize}
-%\item 
-%\end{itemize}
-
 \subsubsection{Komunikacja z komputerem}
 \textbf{Przyjmowane polecenia}: uruchom dźwięk.\\
 \textbf{Wysyłane dane}: brak.
-
-%\subsubsection{Diagram stanów}
-%. . . To Do . . .
 
 \subsubsection{Awarie i sytuacje wyjątkowe}
 \begin{enumerate}
@@ -527,14 +531,12 @@ Ta usterka nie wpływa bardzo na działanie automatu. Użytkownik nie zostanie p
 \section{Komputer}
 
 \subsection{Specyfikacja komputera}
-.. Grzesiek To Do ok? x) ..
-Arduino?
-Jaki system
-Jakie podzespoły, karta sieciowa (?)
-Nie mam pojecia
+
+Komputerem (jednostką centralną) systemu wbudowanego jest mikrokontroler Atmel AVR, komunikujący się z urządzeniami za pomocą magistrali, działającej w standardzie I$^2$C (konkretnie TWI). \\ \\
+Komputer jest podłączony także do modułu obsługującego Wi-Fi oraz do czytnika kart SD. 
 
 \subsection{Komunikacja między komputerem a komponentami}
-Komputer komunikuje się z pozostałymi komponentami protokołem I$^2$C, gdzie urządzeniem typu \emph{master} jest komputer, a urządzeniami typu \emph{slave} są czujniki i urządzenia wykonawcze.
+Komputer komunikuje się z pozostałymi komponentami protokołem I$^2$C, gdzie urządzeniem typu \emph{master} jest komputer, a urządzeniami typu \emph{slave} są czujniki i urządzenia wykonawcze. Każde urządzenie typu \emph{slave} ma okrelony, osmiobitowy adres. 
 
 \section{Aplikacja mobilna}
 \subsection{Konfiguracja aplikacji}
