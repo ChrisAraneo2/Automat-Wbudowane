@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>27</x>
+      <y>108</y>
+      <w>99</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>urządzenie 
+wyłączone</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>117</x>
+      <y>117</y>
+      <w>72</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+przycisk 
+włącz</panel_attributes>
+    <additional_attributes>10.0;20.0;60.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>180</y>
+      <w>144</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+komputer gotowy 
+na gotowanie zupy
+(bez ziemniaków/kaszy)</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>171</x>
+      <y>126</y>
+      <w>126</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>uruchamianie 
+komputera i 
+przygotowywanie 
+maszyny</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>126</y>
+      <w>45</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>540</x>
+      <y>549</y>
+      <w>198</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>gotowanie zupy</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>558</x>
+      <y>126</y>
+      <w>198</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>urządzenie przygotowane 
+do gotowania</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>531</x>
+      <y>387</y>
+      <w>225</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>pobieranie składników i przypraw
+z pojemników</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>837</x>
+      <y>378</y>
+      <w>144</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>gotowanie
+ziemniaków/kaszy
+w pojemniku</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>225</x>
+      <y>549</y>
+      <w>180</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>urządzenie gotowe do 
+odebrania zupy</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>747</x>
+      <y>144</y>
+      <w>207</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+komputer gotowy na 
+gotowanie zupy z 
+ziemniakami/kaszą</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0;210.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>450</y>
+      <w>189</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+wszystkie składniki wrzucone do 
+garnka, pokrywka założona,
+sygnał gotowości od komputera</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>396</x>
+      <y>567</y>
+      <w>162</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+koniec gotowania
+(sygnał z komputera)</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>333</x>
+      <y>180</y>
+      <w>108</w>
+      <h>387</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+wyjęcie
+pojemnika 
+z zupą,
+zatwierdzenie
+od użytkownika
+
+
+
+
+
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes>10.0;410.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>72</x>
+      <y>243</y>
+      <w>171</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+przycisk wyłącz</panel_attributes>
+    <additional_attributes>170.0;380.0;10.0;380.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>171</x>
+      <y>180</y>
+      <w>468</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+przycisk 
+wyłącz</panel_attributes>
+    <additional_attributes>450.0;10.0;450.0;40.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>36</x>
+      <y>189</y>
+      <w>144</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>wyłączanie</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>63</x>
+      <y>153</y>
+      <w>27</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>378</x>
+      <y>342</y>
+      <w>126</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>awaryjne 
+zakończenie</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>747</x>
+      <y>396</y>
+      <w>108</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+ugotowano
+ziemiaki/
+kaszę/ryż</panel_attributes>
+    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>522</x>
+      <y>333</y>
+      <w>468</w>
+      <h>306</h>
+    </coordinates>
+    <panel_attributes>stan pracy maszyny
+--
+valign=top
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>423</x>
+      <y>180</y>
+      <w>171</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+
+wyjęcie pojemnika z 
+zupą, składników,
+zatwierdzenie od komputera</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>414</x>
+      <y>396</y>
+      <w>126</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+awaria/
+sygnał wyłączenia
+z komputera</panel_attributes>
+    <additional_attributes>120.0;90.0;10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>315</x>
+      <y>63</y>
+      <w>144</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>Sprawdzanie, czy:
+-pojemnik na brudną 
+wodę nie jest 
+zapełniony,
+-pojemnik na wodę nie 
+jest pusty</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>135</y>
+      <w>126</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+warunki
+spełnione</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+</diagram>
