@@ -72,7 +72,8 @@ maszyny</panel_attributes>
       <w>198</w>
       <h>72</h>
     </coordinates>
-    <panel_attributes>gotowanie zupy</panel_attributes>
+    <panel_attributes>gotowanie zupy
+bg=cyan</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -96,7 +97,8 @@ do gotowania</panel_attributes>
       <h>72</h>
     </coordinates>
     <panel_attributes>pobieranie składników i przypraw
-z pojemników</panel_attributes>
+z pojemników
+bg=cyan</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -109,7 +111,8 @@ z pojemników</panel_attributes>
     </coordinates>
     <panel_attributes>gotowanie
 ziemniaków/kaszy
-w pojemniku</panel_attributes>
+w pojemniku
+bg=cyan</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -174,9 +177,6 @@ koniec gotowania
       <h>423</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-wyjęcie
-pojemnika 
-z zupą,
 zatwierdzenie
 od użytkownika
 
@@ -279,22 +279,6 @@ valign=top
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>657</x>
-      <y>288</y>
-      <w>180</w>
-      <h>198</h>
-    </coordinates>
-    <panel_attributes>lt=-&gt;
-
-
-wyjęcie pojemnika z 
-zupą, składników,
-zatwierdzenie od komputera</panel_attributes>
-    <additional_attributes>10.0;200.0;10.0;10.0;120.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
       <x>648</x>
       <y>522</y>
       <w>126</w>
@@ -327,5 +311,18 @@ z komputera</panel_attributes>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;50.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>657</x>
+      <y>288</y>
+      <w>180</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+zatwierdzenie od komputera
+albo od użytkownika</panel_attributes>
+    <additional_attributes>10.0;200.0;10.0;10.0;120.0;10.0</additional_attributes>
   </element>
 </diagram>
