@@ -374,7 +374,8 @@ Użytkownik opróżnia pojemnik, gdy ten jest pełny. Zostanie o tym poinformowa
 
 \subsubsection{Awarie i sytuacje wyjątkowe}
 \begin{enumerate}
-
+  \item \textbf{Awaria sensora wody }\\
+W przypadku nieprawidłowego działania sensora wody komputer powinien dostać nieprawidłową odpowiedź. Wtedy wyświetlane jest ostrzeżenie o możliwości przepełnienia pojemnika. Użytkownik może kontynuować korzystanie z automatu, ale musi samemu sprawdzać stan napełnienia pojemnika.
   \item \textbf{Uszkodzenie przewodów}\\
 W przypadku uszkodzenia przewodów zasilających komponent czy uszkodzenia połączenia z komputerem automat musi być oddany do serwisu.
 \end{enumerate}
@@ -393,7 +394,7 @@ W przypadku uszkodzenia przewodów zasilających komponent czy uszkodzenia poł�
 \end{enumerate}
 
 \subsubsection{Dokładniejszy opis budowy i funkcjonalność}
-Metalowy stojak na garnek, który jest w zestawie z automatem. Stojak ma wbudowany induktor do grzejnika, moc 2300 W, połączony z komputerem, który steruje mocą induktora (przez przetwornik analogowo cyfrowy). Posiada czujnik tensometryczny, o zakresie miary ciężaru 0-15kg (element wagi). Posiada wentylator do grzejnika. Czujnik jest podłączony do przetwornika analogowo-cyfrowego, który połączony jest z komputerem jako \emph{slave}. Posiada moduł termometru o zakresie pomiarowym od -50\degree C do 290\degree C. Jest wyposażony w szklaną przykrywkę na garnek. Ma wentylator do grzenika.
+Metalowy stojak na garnek, który jest w zestawie z automatem. Stojak ma wbudowany induktor do grzejnika, moc 2300 W, połączony z komputerem, który steruje mocą induktora (przez przetwornik analogowo cyfrowy). Posiada czujnik tensometryczny, o zakresie miary ciężaru 0-15kg (element wagi). Serwomechanizm do nałożenia pokrywki na garnek. Posiada wentylator do grzejnika. Czujnik jest podłączony do przetwornika analogowo-cyfrowego, który połączony jest z komputerem jako \emph{slave}. Posiada moduł termometru o zakresie pomiarowym od -50\degree C do 290\degree C. Jest wyposażony w szklaną przykrywkę na garnek. Ma wentylator do grzenika.
  
 \subsubsection{Wykorzystanie i relacje z podzespołami}
 Waga służy do sprawdzenia czy na stojaku jest umieszczony garnek. Termometr służy do kontroli temperatury wody, jako że niektóre zupy powinny być gotowane w niewrzącej wodzie. Wszystkie podzespoły są kontrolowane przez komputer główny.
@@ -405,11 +406,23 @@ Posiekane składniki oraz przyprawy spadają do garnka na stojaku z pojemników 
 Użytkownik kładzie garnek przed uruchomieniem urządzenia. Po gotowaniu zdejmuje garnek z zupą. Po opróżnieniu garnka użytkownik myje garnek i ponownie kładzie go na stojak.
 
 \subsubsection{Komunikacja z komputerem}
-Przyjmowane polecenia: otwórz/zamknij szklaną pokrywkę, uruchom/wyłącz grzejnik indukcyjny, sprawdź czy garnek jest położony na stojaku (waga), sprawdź temperaturę.\\
-Wysyłane dane: aktualna temperatura, czy garnek znajduje się na stojaku.
+\textbf{Przyjmowane polecenia}: otwórz/zamknij szklaną pokrywkę, uruchom/wyłącz grzejnik indukcyjny, sprawdź czy garnek jest położony na stojaku (waga), sprawdź temperaturę.\\
+\textbf{Wysyłane dane}: aktualna temperatura, czy garnek znajduje się na stojaku.
 
 \subsubsection{Awarie i sytuacje wyjątkowe}
-. . . To Do . . .
+\begin{enumerate}
+  \item \textbf{Brak położonego garnka na stojaku}\\
+Jeżeli użytkownik nie postawił garnka na stojaku, co jest sprawdzane dzięki pobraniu informacji o wadze, automat zatrzymuje pracę i czeka na postawienie garnka.
+  \item \textbf{Awaria grzejnika}\\
+W przypadku gdy grzejnik nie działa komputer dowiaduje się o tym poprzez analizowanie temperatury. Wyświetla informację o awarii grzejnika. Sugerowane jest oddanie automatu do naprawy.
+  \item \textbf{Uszkodzony mechanizm kładzenia przykrywki na garnek, niepołożona przykrywka}\\
+Przykrywka na garnku nie jest niezbędna, ale zalecana. Uszkodzony mechanizm nakładania przykrywki na garnek nie uniemożliwia korzystania z automatu, ale inne elementy automatu mogą być narażone na uszkodzenie przez parę wodną.
+  \item \textbf{Niesprawny termometr}
+W momencie gdy moduł termometru jest niesprawny komputer nie otrzymuje odpowiedzi od komponentu na temat temperatury wody. W tym przypadku wyświetlany jest błąd. Może to być przyczyną wygotowania zupy. Zalecana jest naprawa.
+  \item \textbf{Uszkodzenie przewodów}\\
+W przypadku uszkodzenia przewodów zasilających komponent czy uszkodzenia połączenia z komputerem automat musi być oddany do serwisu.
+\end{enumerate}
+
 
 
 
@@ -490,7 +503,8 @@ Karta dźwiękowa to obowiązkowy element głośnika. Posiada wbudowaną prostą
 Głośnik nie ma połączenia z innymi komponentami, oprócz komputera.
 
 \subsubsection{Relacje z użytkownikiem automatu}
-Brak.
+Użytkownik słyszy sygnał zakończenia gotowania.
+
 
 %\subsubsection{Wykorzystane podzespoły}
 %\begin{itemize}
@@ -498,14 +512,17 @@ Brak.
 %\end{itemize}
 
 \subsubsection{Komunikacja z komputerem}
-Przyjmowane polecenia: uruchom dźwięk.\\
-Wysyłane dane: brak.
+\textbf{Przyjmowane polecenia}: uruchom dźwięk.\\
+\textbf{Wysyłane dane}: brak.
 
 %\subsubsection{Diagram stanów}
 %. . . To Do . . .
 
 \subsubsection{Awarie i sytuacje wyjątkowe}
-
+\begin{enumerate}
+  \item \textbf{Uszkodzenie głośnika lub karty dźwiękowej}\\
+Ta usterka nie wpływa bardzo na działanie automatu. Użytkownik nie zostanie poinformowany dźwiękowo o skończeniu gotowania.
+\end{enumerate}
 
 \section{Komputer}
 
