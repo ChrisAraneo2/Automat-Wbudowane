@@ -71,9 +71,8 @@ Reszta funkcjonalności i zachowań poszczególnych komponentów znajduje się w
 
 \subsection{Wybór przepisu, lokalna oraz internetowa baza przepisów}
 \subsubsection{Opis funkcjonalności}
-Komputer posiada podłączoną kartę Micro-SD z bazą danych zawierającą początkowo kilkadziesiąt przepisów na zup. Użytkownik może za pomocą interfejsu wybrać interesujący go przepis i opcjonalnie wprowadzić niewielkie modyfikacje (na przykład określić ilość przypraw, gdy ma ich niewystarczająco wiele). Takie modyfikacje nie są zapisywane w bazie danych, ale są brane pod uwagę przed gotowaniem. Następnie użytkownik może rozpocząć kolejny etap, czyli uzupełnianie składników w pojemnikach.\\ \\
-Urządzenie posiada też opcję połączenia ze stroną internetową producenta. Na tej stronie użytkownicy mogą tworzyć, modyfikować i umieszczać własne przepisy, które następnie są pobierane do urządzenia dzięki API. Po pobraniu przepisu istnieje możliwość zapisania go w pamięci urządzenia. Nowo utworzony w serwisie internetowym przepis musi być zatwierdzony przed administrację przed pojawieniem się publicznie.\\ \\
-Urządzenie pozwala także na połączenie przez Internet z aplikacją mobilną, która pozwala na samodzielnie tworzenie oraz edycję przepisów. Aplikacja umożliwia także zdalne uruchomienie automatu.\\
+Komputer posiada podłączoną kartę Micro-SD z bazą danych zawierającą początkowo kilkadziesiąt przepisów na zup. Użytkownik może wybrać interesujący go przepis i opcjonalnie wprowadzić modyfikacje (określić ilość przypraw, gdy ma ich niewystarczająco wiele). Te modyfikacje nie są zapisywane w bazie danych, są brane pod uwagę przed gotowaniem. Następnie użytkownik może rozpocząć kolejny etap, czyli uzupełnianie składników.\\ \\
+Urządzenie posiada też opcję połączenia ze stroną internetową producenta. Na tej stronie użytkownicy mogą tworzyć, modyfikować i umieszczać przepisy, które są pobierane do urządzenia dzięki API. Istnieje możliwość zapisania pobranego przepisu w bazie danych. Przepisy w serwisie internetowym są zatwierdzane przez administrację.\\ \\
 
 \subsubsection{Format przepisu i bazy danych}
 Przepis jest plikiem w formacie JSON, natomiast baza danych mieści się na karcie Micro-SD. W każdym z przepisów zawarte są informacje:
@@ -89,27 +88,26 @@ Przepis jest plikiem w formacie JSON, natomiast baza danych mieści się na karc
 \end{enumerate}
 
 \subsubsection{Uszkodzony lub niepoprawny plik}
-Jeżeli system nie zdołał poprawnie wczytać przepisu lub przepis zawiera niepoprawne wartości (na przykład ujemny czas gotowania) wtedy na głównym wyświetlaczu ukazuje się komunikat o błędzie. Komunikat proponuje oddanie urządzenia do serwisu ze względów bezpieczeństwa.\\ \\
-Użytkownik może spróbować natomiast poradzić sobie z problemem na własną rękę. Należy wyłączyć urządzenie, zmienić kartę Micro-SD oraz ponownie uruchomić automat, co będzie skutkowało pustą bazą danych lecz odblokuje to normalne funkcje automatu.
+Jeżeli system nie zdołał poprawnie wczytać przepisu lub przepis zawiera niepoprawne wartości (na przykład ujemny czas gotowania) wtedy na głównym wyświetlaczu ukazuje się komunikat o błędzie.
 
 \subsection{Wyświetlenie instrukcji uzupełnienia pojemników na składniki}
-Użytkownik może zobaczyć intuicyjną instrukcję przygotowywania składników na główym wyświetlaczu urządzenia. Instrukcja jest generowana na podstawie pliku z przepisem (lub zapisana w pliku przepisu). Instrukcja zawiera takie informacje jak ilość poszczególnych składników, sugerowane miejsce ich rozłożenia. Równocześnie na wyświetlaczu są podawane komunikaty o błędach czy niewystarczającej ilości składników w pojemnikach. Komunikaty o błędach uniemożliwiają uruchomienie procesu gotowania/siekania, natomiast ostrzeżenia o np. braku niektórych składników mogą być pominięte.
+Użytkownik może zobaczyć instrukcję przygotowywania składników na główym wyświetlaczu urządzenia. Instrukcja jest generowana na podstawie pliku z przepisem (lub zapisana w pliku przepisu). Instrukcja zawiera takie informacje jak ilość poszczególnych składników, sugerowane miejsce ich rozłożenia. Na wyświetlaczu są podawane komunikaty o błędach czy niewystarczającej ilości składników w pojemnikach (te mogą zostać pominięte).
 
 \subsection{Sprawdzanie wagi umieszczonych składników}
-Każdy z 9 pojemników na składniki zawiera niewielką wagę wbudowaną w spód pojemnika. Celem każdej z wag jest sprawdzanie ilości włożonych do pojemnika składników. Dane o wadze są wysyłane do głównego komputera, który odpowiada informacją, która jest wyświetlana na wyświetlaczy LCD pojemnika (na przykład: "Włożono 20/30g cebuli").
+Każdy z 9 pojemników na składniki zawiera niewielką wagę wbudowaną w spód pojemnika. Dane o wadze składników są wysyłane do głównego komputera, który odpowiada informacją, która jest wyświetlana na wyświetlaczu LCD pojemnika (na przykład: "Włożono 20/30g cebuli").
 
 \subsection{Krojenie/siekanie składników w pojemnikach}
-Automat posiada 9 specjalnych pojemników na składniki zupy. W środku 5 z nich zamontowane są niewielkie ostrza służące do pokrojenia składników na mniejsze kawałki, przykładowo marchwi, cebuli. Każdy z pojemników jest ponumerowany od 1 do 9. Przepis zawiera informację który składnik należy włożyć do którego pojemnika w jakiej ilości. Czas siekania za pomocą ostrzy w dla każdego z pojemników jest określony w pliku przepisu.
+W środku 5 pojemników na składniki są zamontowane niewielkie ostrza pokrojenia składników na mniejsze kawałki, przykładowo marchwi, cebuli. Każdy z pojemników jest ponumerowany od 1 do 9. Przepis zawiera informację który składnik należy włożyć do którego pojemnika w jakiej ilości. Czas siekania za pomocą ostrzy w dla każdego z pojemników jest określony w przepisie.
 
 \subsection{Gotowanie wody/zupy oraz opróżnianie brudnej wody}
 \subsubsection{Gotowanie ziemniaków, kaszy, makaronu czy ryżu}
-Urządzenie posiada pojemnik na gotowanie ziemniaków, kaszy, makaronu lub ryżu. Pojemnik ten wyposażony jest w grzałkę, dzięki czemu woda w tym pojemniku może być ugotowana. Po ugotowaniu niezdatna do spożycia woda jest wylewana przewodami do specjalnego pojemnika na brudną wodę.
+Urządzenie posiada pojemnik na gotowanie ziemniaków, kaszy, makaronu lub ryżu. Pojemnik ten wyposażony jest w dwie grzałki. Po ugotowaniu niezdatna do spożycia woda jest wylewana przewodami do pojemnika na brudną wodę.
 
 \subsubsection{Gotowanie zupy}
-Urządzenie posiada drugi grzejnik, indukcyjny, który podgrzewa zupę w garnku. Jest to ostatni proces przygotowywania zupy, podgrzewane są wszystkie składniki znajdujące się razem w garnku.
+Urządzenie posiada indukcyjny grzejnik wbudowany w stojak na garnek, który podgrzewa zupę w garnku. To ostatni proces przygotowywania zupy, podgrzewane są wszystkie składniki znajdujące się razem w garnku.
 
 \subsection{Sygnały dźwiękowe}
-Po zakończeniu gotowania zupy urządzenie odtwarza w pętli co około pół minuty dźwięk informujący o zakończeniu procesu gotowania. Dźwięk odtwarza się do momentu zdjęcia garnka z grzejnika. Urządzenie sprawdza obecność garnka za pomocą wagi umieszczonej w podstawce na garnek.
+Po zakończeniu gotowania zupy urządzenie odtwarza w pętli co około pół minuty dźwięk informujący o zakończeniu procesu gotowania. Dźwięk odtwarza się do momentu zdjęcia garnka z grzejnika. Urządzenie sprawdza obecność garnka za pomocą wagi umieszczonej stojaku na garnek.
 
 \subsection{Przypomnienie o konieczności umycia pojemników}
 Po zakończonym gotowaniu na głównym wyświetlaczu ukazuje się przypomnienie o umyciu garnków oraz pojemników na składniki.
