@@ -121,10 +121,10 @@ Po zakończonym gotowaniu na głównym wyświetlaczu ukazuje się przypomnienie 
 \subsection{Opis niektórych stanów}
 %\paragraph{uruchamianie komputera i przygotowywanie maszyny} - uruchamianie mikrokontrolera i 
 \paragraph{Sprawdzanie czy...} - sprawdzanie warunków okrelonych do poprawnego rozpoczęcia gotowania: czy zbiornik z wodą posiada odpowiednią ilosć wody do gotowania i czy pojemnik na brudną wodę nie jest zapełniony. Maszyna może sprawdzać też inne warunki, np. czy wysuwane pokrywki są w odpowiednim miejscu, czujniki wysyłają odpowiednie sygnały. Jeżeli te warunki nie są spełnione, urządzenie pozostaje w tym stanie i informuje o tym. Po włożeniu pojemnika, warunki są sprawdzane ponownie i jeżeli są spełnione, maszyna wchodzi do stanu przygotowania do gotowania.
-\paragraph{urządzenie gotowe do gotowania} - funkcjonowanie urządzenia jest warunkowane przez interfejs (patrz diagram stanów interfejsu).
-\paragraph{gotowanie ziemniaków/kaszy w pojemniku} - patrz diagram stanów pojemnika do gotowania ziemniaków/kaszy/makaronu.
-\paragraph{awaryjne zakończenie} - na ekranie wywietlana jest informacja o nieplanowanym zakończeniu pracy maszyny. Maszyna przechodzi do następnego stanu jeżeli: składniki z pojemników zostaną wyjęte, komputer otrzyma sygnał zatwiedzenia z interfejsu.
-\paragraph{urządzenie gotowe do odebrana zupy} - na ekranie wywietlana jest informacja o nieplanowanym zakończeniu pracy maszyny. Maszyna przechodzi do następnego stanu jeżeli komputer otrzyma sygnał zatwiedzenia z interfejsu.
+\paragraph{Urządzenie gotowe do gotowania} - funkcjonowanie urządzenia jest warunkowane przez interfejs (patrz diagram stanów interfejsu).
+\paragraph{Gotowanie ziemniaków/kaszy w pojemniku} - patrz diagram stanów pojemnika do gotowania ziemniaków/kaszy/makaronu.
+\paragraph{Awaryjne zakończenie} - na ekranie wywietlana jest informacja o nieplanowanym zakończeniu pracy maszyny. Maszyna przechodzi do następnego stanu jeżeli: składniki z pojemników zostaną wyjęte, komputer otrzyma sygnał zatwiedzenia z interfejsu.
+\paragraph{Urządzenie gotowe do odebrana zupy} - na ekranie wywietlana jest informacja o nieplanowanym zakończeniu pracy maszyny. Maszyna przechodzi do następnego stanu jeżeli komputer otrzyma sygnał zatwiedzenia z interfejsu.
 
 
 \newpage
@@ -154,14 +154,11 @@ Po zakończonym gotowaniu na głównym wyświetlaczu ukazuje się przypomnienie 
 \subsubsection{Spis podzespołów komponentu}
 \begin{enumerate}
   \item Plastikowy pojemnik o pojemności 10L
-  \item Czujnik poziomu wody
-  \item Zawory elektromagnetyczne i rynienki do przelewania wody
+  \item Sensor wody - czujnik pływakowy
+  \item Zawory elektromagnetyczne i rynienki do napełniania wodą innych pojemników
   \item Połączenie z komputerem
   \item Podłączenie do zasilania
 \end{enumerate}
-
-\subsubsection{Dokładniejszy opis budowy i funkcjonalność}
-Plastikowy zbiornik na wodę o pojemności 10L. Wewnątrz posiada sensor wody. Posiada połączenie z komputerem w celu wymiany informacji. Zawiera zawory elektromagnetyczne do upuszczania wody i sterowania jej przepływem (do różnych pojemników). Ze względu na korzystanie z prądu posiada połączenie do przewodów zasilających.
 
 \subsubsection{Wykorzystanie i relacje z podzespołami}
 Wykorzystuje czujnik poziomu wody do określania aktualnej objętości wody. Używa zaworów i systemu rynienek do napełniania innych pojemników wykorzystujących wodę. 
@@ -192,18 +189,18 @@ W przypadku uszkodzenia przewodów zasilających komponent czy uszkodzenia poł�
 \subsubsection{Spis podzespołów komponentu}
 Każdy z 5 pojemników z ostrzami zawiera:
 \begin{enumerate}
-  \item Ostrza
-  \item Silnik elektryczny
+  \item Metalowy nierdzewny otwarty z góry pojemnik 10cm $\times$ 7cm $\times$ 10cm
   \item Górna przykrywka z akrylu
-  \item Wsuwana podstawa
-  \item Waga z czujnikiem tensometrycznym
-  \item Niewielki wyświetlacz LCD
+  \item Serwomechanizmy wysuwające podstawę pojemnika, zamykające pojemnik przykrywką
+  \item Nierdzewne ostrza
+  \item Silnik elektryczny - obracający ostrza, moc 500W
+  \item Wysuwana podstawa
+  \item Waga z czujnikiem tensometrycznym, zakres miary ciężaru 0-2kg
+  \item Przetwornik analogowo-cyfrowy, podłączony z komputerem jako \emph{slave}
+  \item Niewielki wyświetlacz LCD 2x16 znaków
   \item Połączenie z komputerem
   \item Podłączenie do zasilania za pomocą wtyczki
 \end{enumerate}
-
-\subsubsection{Dokładniejszy opis budowy i funkcjonalność}
-Metalowy, nierdzewny, otwarty z góry pojemnik o wymiarach 10cm $\times$ 7cm $\times$ 10cm. Jest wyposażony w serwomechanizmy wsuwające ruchomą podstawę (do opróżniania pojemnika), kładący akrylową przykrywkę (zabezpieczenie). W środku zawiera zamontowane nierdzewne ostrza (sterowane przez komputer). Posiada silnik elektryczny obracający ostrza, moc 500W. Ma wbudowany w podstawę czujnik tensometryczny, o zakresie miary ciężaru 0-2kg (element wagi). Czujnik jest podłączony do przetwornika analogowo-cyfrowego, który połączony jest z komputerem jako \emph{slave}. Od strony frontowej pojemnik ma wyświetlacz LCD 2x16 znaków. Ze względu na potrzebę wykorzystania prądu pojemnik jest połączony do przewodów zasilających za pomocą wtyczki. Pojemnik jest przystosowany do wyjęcia z urządzenia w celu umycia.
  
 \subsubsection{Wykorzystanie i relacje z podzespołami}
 Waga jest wykorzystywana do kontrolowania ilości składnikiów. Ostrza są używane do siekania składników na mniejsze części. Akrylowa przykrywka jest zamykana i unieruchamiana na czas siekania składników. Podstawa pojemnika jest wsuwana po procesie siekania, tak aby wszystkie składniki spadły do garnka pod spodem. Wyświetlacz LCD na frontowej ścianie wyświetla informacje o wadze umieszczonych składników.
@@ -240,18 +237,18 @@ W przypadku uszkodzenia przewodów zasilających komponent czy uszkodzenia poł�
 
 \subsection{Pojemniki na składniki (bez ostrzy)}
 \subsubsection{Spis podzespołów komponentu}
-Każdy z 4 pojemników na składniki (bez ostrzy) zawiera:
+Każdy z 5 pojemników (bez ostrzy), podobnie jak pojemniki z ostrzami, zawiera:
 \begin{enumerate}
+  \item Metalowy nierdzewny otwarty z góry pojemnik 10cm $\times$ 7cm $\times$ 10cm
   \item Górna przykrywka z akrylu
-  \item Wsuwana podstawa
-  \item Waga z czujnikiem tensometrycznym
-  \item Niewielki wyświetlacz LCD
+  \item Serwomechanizmy wysuwające podstawę pojemnika, zamykające pojemnik przykrywką
+  \item Wysuwana podstawa
+  \item Waga z czujnikiem tensometrycznym, zakres miary ciężaru 0-2kg
+  \item Przetwornik analogowo-cyfrowy, podłączony z komputerem jako \emph{slave}
+  \item Niewielki wyświetlacz LCD 2x16 znaków
   \item Połączenie z komputerem
   \item Podłączenie do zasilania za pomocą wtyczki
 \end{enumerate}
-
-\subsubsection{Dokładniejszy opis budowy i funkcjonalność}
-Metalowy, nierdzewny, otwarty z góry pojemnik o wymiarach 10cm $\times$ 7cm $\times$ 10cm. Jest wyposażony w serwomechanizmy wsuwające ruchomą podstawę (do opróżniania pojemnika), kładący akrylową przykrywkę (zabezpieczenie). Ma wbudowany w podstawę czujnik tensometryczny, o zakresie miary ciężaru 0-2kg (element wagi). Czujnik jest podłączony do przetwornika analogowo-cyfrowego, który połączony jest z komputerem jako \emph{slave}. Od strony frontowej pojemnik ma wyświetlacz LCD 2x16 znaków. Ze względu na potrzebę wykorzystania prądu pojemnik jest połączony do przewodów zasilających za pomocą wtyczki. Pojemnik jest przystosowany do wyjęcia z urządzenia w celu umycia.
  
 \subsubsection{Wykorzystanie i relacje z podzespołami}
 Waga jest wykorzystywana do kontrolowania ilości składnikiów. Akrylowa przykrywka jest zamykana i unieruchamiana na czas siekania składników. Wsuwana podłoga jest aby wszystkie składniki spadły do garnka pod spodem przed rozpoczęciem procesu gotowania. Wyświetlacz LCD na frontowej ścianie wyświetla informacje o wadze umieszczonych składników.
@@ -278,14 +275,14 @@ Użytkownik uzupełnia pojemnik odpowiednimi składnikami według instrukcji na 
 \subsubsection{Spis podzespołów komponentu}
 Każdy z 5 pojemników na przyprawy zawiera:
 \begin{enumerate}
+  \item Metalowy nierdzewny otwarty z góry pojemnik 5cm $\times$ 5cm $\times$ 7cm
+  \item Serwomechanizmy wysuwające podstawę pojemnika, zamykające pojemnik przykrywką
   \item Wsuwana podstawa
-  \item Waga z czujnikiem tensometrycznym
+  \item Waga - czujnik tensometryczny o zakresie miary ciężaru 0-1kg
+  \item Przetwornik analogowo-cyfrowy, podłączony z komputerem jako \emph{slave}
   \item Połączenie z komputerem
   \item Podłączenie do zasilania za pomocą wtyczki
 \end{enumerate}
-
-\subsubsection{Dokładniejszy opis budowy i funkcjonalność}
-Metalowy, nierdzewny, otwarty z góry pojemnik o wymiarach 5cm $\times$ 5cm $\times$ 7cm. Pojemnik nie zawiera przykrywki. Posiada serwomechanizmy wsuwające podstawę. W dolnej części pojemnika mieści się wsuwana podstawa z wbudowaną wagą - czujnikiem tensometrycznym o zakresie miary ciężaru 0-2kg. Czujnik jest podłączony do przetwornika analogowo-cyfrowego, który połączony jest z komputerem jako \emph{slave}. Pojemnik jest połączony do przewodów zasilających za pomocą wtyczki. Pojemnik jest przystosowany do wyjęcia z urządzenia w celu umycia.
  
 \subsubsection{Wykorzystanie i relacje z podzespołami}
 Waga jest wykorzystywana do kontrolowania ilości przypraw. Celem wsuwanej podstawy jest aby wszystkie składniki spadły do garnka pod spodem przed rozpoczęciem procesu gotowania.
@@ -310,18 +307,18 @@ Użytkownik uzupełnia pojemnik odpowiednimi przyprawami według instrukcji na e
 \subsection{Pojemnik do gotowania ziemniaków/kaszy/makaronu}
 \subsubsection{Spis podzespołów komponentu}
 \begin{enumerate}
-  \item Akrylowa przykrywka
+  \item Metalowy, nierdzewny garnek przystosowany do gotowania, o pojemności 2L
+  \item Akrylowa przykrywka - z otworem na wydostanie się pary wodnej
   \item Dwie grzałki elektryczne
-  \item Termometr (dołączony do przykrywki)
-  \item Waga z czujnikiem tensometrycznym
+  \item Moduł termometru o zakresie pomiarowym -50\degree C do 290\degree
+  \item Waga z czujnikiem tensometrycznym, o zakresie pomiaru 0-5kg
+  \item Przetwornik analogowo-cyfrowy, połączony z komputerem jako \emph{slave}
   \item Zawór elektromagnetyczny do spuszczania wody
   \item Zapadnia (na ziemniaki/makaron/kaszę)
+  \item Nienagrzewające się uchwyty z tworzywa sztucznego (użycie opcjonalne)
   \item Połączenie z komputerem
   \item Podłączenie do zasilania
 \end{enumerate}
-
-\subsubsection{Dokładniejszy opis budowy i funkcjonalność}
-Pojemnik służy do gotowania ziemniaków/kaszy/makaronu lub innych produktów wymagających zagotowanie. Metalowy, nierdzewny pojemnik o pojemności 2L. Posiada akrylową przykrywkę. Jest wyposażony w serwomechanizmy kładące akrylową przykrywkę (z niewielkim otworem na wydostanie się pary wodnej), otwierające zapadnię. Wewnątrz posiada grzejnik - dwie grzałki elektryczne. Posiada moduł termometru o zakresie pomiarowym od -50\degree C do 290\degree C. Ma wbudowany czujnik tensometryczny, o zakresie miary ciężaru 0-5kg (element wagi). Czujnik jest podłączony do przetwornika analogowo-cyfrowego, który połączony jest z komputerem jako \emph{slave}. Posiada zapadnię.
  
 \subsubsection{Wykorzystanie i relacje z podzespołami}
 Ma wbudowaną wagę służącą do oszacowania ilości wody przed rozpoczęciem gotowania oraz wagi ziemniaków po włożeniu do pojemnika. Posiada zawory do odlania brudnej wody. Zawiera zapadnię do przeładowania składników do garnka. Za pomocą termometru sprawdza temperaturę wody. Wymaga podłączenia do sieci elektrycznej. Duże zużycie energii ze względu na wykorzystanie grzałek do zagotowania wody.
@@ -359,13 +356,11 @@ W przypadku uszkodzenia przewodów zasilających komponent czy uszkodzenia poł�
 \subsection{Pojemnik na wodę po gotowaniu}
 \subsubsection{Spis podzespołów komponentu}
 \begin{enumerate}
+  \item Plastikowy pojemnik o pojemności 9L
   \item Sensor wody - czujnik pływakowy
   \item Połączenie z komputerem
   \item Podłączenie do zasilania
 \end{enumerate}
-
-\subsubsection{Dokładniejszy opis budowy i funkcjonalność}
-Duży plastikowy pojemnik o pojemności 9L umieszczony na dole urządzenia. Pojemnik zawiera sensor wody złożony z czujnika pływakowego poziomu cieczy. Jest połączony do zasilania oraz do komputera.
  
 \subsubsection{Wykorzystanie i relacje z podzespołami}
 Pojemnik zawiera prosty sensor wody umieszczony w górnej części. Jeżeli pojemnik jest prawie pełny sensor to wykryje i będzie w stanie poinformować o tym komputer główny automatu.
@@ -393,16 +388,15 @@ W przypadku uszkodzenia przewodów zasilających komponent czy uszkodzenia poł�
 \subsection{Stojak na garnek}
 \subsubsection{Spis podzespołów komponentu}
 \begin{enumerate}
-  \item Grzejnik indukcyjny
+  \item Induktor do grzejnika, moc 2300W
+  \item Przetwornik analogowo cyfrowy do induktora, połączony do komputera jako \emph{slave}
+  \item Wentylator do grzejnika
   \item Waga z czujnikiem tensometrycznym
-  \item Pokrywka
-  \item Termometr
+  \item Szklana pokrywka z odpowietrznikiem pary
+  \item Moduł termometru o zakresie pomiarowym od -50\degree C do 290\degree C
   \item Połączenie z komputerem
   \item Połączenie do zasilania
 \end{enumerate}
-
-\subsubsection{Dokładniejszy opis budowy i funkcjonalność}
-Metalowy stojak na garnek, który jest w zestawie z automatem. Stojak ma wbudowany induktor do grzejnika, moc 2300 W, połączony z komputerem, który steruje mocą induktora (przez przetwornik analogowo cyfrowy). Posiada czujnik tensometryczny, o zakresie miary ciężaru 0-15kg (element wagi). Serwomechanizm do nałożenia pokrywki na garnek. Posiada wentylator do grzejnika. Czujnik jest podłączony do przetwornika analogowo-cyfrowego, który połączony jest z komputerem jako \emph{slave}. Posiada moduł termometru o zakresie pomiarowym od -50\degree C do 290\degree C. Jest wyposażony w szklaną przykrywkę na garnek. Ma wentylator do grzenika.
  
 \subsubsection{Wykorzystanie i relacje z podzespołami}
 Waga służy do sprawdzenia czy na stojaku jest umieszczony garnek. Termometr służy do kontroli temperatury wody, jako że niektóre zupy powinny być gotowane w niewrzącej wodzie. Wszystkie podzespoły są kontrolowane przez komputer główny.
@@ -440,7 +434,7 @@ Opis i działanie komputera jako głównej jednostki obliczeniowej i sterującej
 \subsection{Główny interfejs}
 \subsubsection{Spis podzespołów komponentu}
 \begin{enumerate}
-  \item Ekran dotykowy
+  \item PDA - TM7000 - Ekran dotykowy, kolorowy LCD, 800 $\times$ 480, działa we współpracy z procesorem Atmel AVR
   \item Przycisk Start
   \item Przycisk Góra
   \item Przycisk Dół
@@ -451,9 +445,6 @@ Opis i działanie komputera jako głównej jednostki obliczeniowej i sterującej
   \item Połączenie do zasilania
 \end{enumerate}
 
-\subsubsection{Dokładniejszy opis budowy i funkcjonalność}
-Główny interfejs to ekran oraz wbudowane przyciski. PDA - TM7000 -  Ekran dotykowy, seria PDA, LCD kolorowy, 800 x 480, działa we współpracy z procesorem Atmel AVR. Ustawiony jest w pozycji wertykalnej. Na dolnej części obudowy ekranu znajdują się przyciski, takie jak w spisie powyżej.
- 
 \subsubsection{Wykorzystanie i relacje z podzespołami}
 Przyciski na ekranie służą wysyłaniu sygnałów do komputera. Celem ekranu dotykowego jest ergonomiczność i prostota korzystania z automatu dla użytkownika. 
 
@@ -476,12 +467,12 @@ Opis niektórych stanów:
 \item \textbf{Urządzenie wyłączone, uruchamia się bądź wyłącza się} - ekran dotykowy jest zablokowany, po uruchomieniu komputera, przechodzi w stan wyboru opcji
 \item \textbf{Wybór opcji} - na ekranie dotykowym wywietlają się następujące opcje: \emph{lista przepisów}, \emph{internetowa baza przepisów}, \emph{ustawienia i konfiguracja}, \emph{wyłącz urządzenie}, wywietlają się także ostrzeżenia, np. \emph{brak wody w pojemniku}, \emph{pojemniki na brudną wodę zapełniony} 
 \item \textbf{Ustawienia urządzenia...} - na ekranie dotykowym wywietlają się ustawienia urządzenia. Są to m.in.: \emph{Połączenie Wi-Fi}, \emph{Ustawienia ekranu}, \emph{Ustawienia daty i godziny}.
-\item \textbf{wybór przepisu z listy} - maszyna ładuje przepisy z karty SD. Listę można przesuwać oraz wybierać z niej przepisy. Można zmieniać przepisy przyciskami góra/dół. Można także szukać przepis wg. nazwy (za pomocą uproszczonej klawiatury na ekranie)
-\item \textbf{szukanie przepisów wród kategorii i ewentualne pobieranie} - po poprawnym połączeniu się z bazą internetową, można szukać przepisy na zupy wg. kategorii, wywietlać informacje w nich zawarte oraz pobierać do pamięci urządzenia. 
-\item \textbf{wybrany przepis} - wywietla się przepis i informacje o nim (m.in. składniki, czas gotowania). Można wrócić do poprzedniej listy, rozpocząć przygotowanie do gotowania, bądź usunąć przepis z listy.
-\item \textbf{maszyna sprawdza czy włożono składniki...} - sprawdzanie, czy maszyna jest gotowa na rozpoczęcie gotowania
-\item \textbf{stan pracy maszyny} - ekran nie ma możliwosci interakcji z użytkownikiem, na ekranie wyswietlany jest postęp. Możliwe jest awaryjne zakończenie pracy, przez dwukrotne wcisnięcie przycisku "wyłącz".
-\item \textbf{ekran zaleca, by wyjąć składniki} - koniec gotowania, interfejs przechodzi do stanu "wybór opcji", gdy garnek z zupą zostanie wyjęty lub zostanie nacisnięty odpowiedni przycis na ekranie.
+\item \textbf{Wybór przepisu z listy} - maszyna ładuje przepisy z karty SD. Listę można przesuwać oraz wybierać z niej przepisy. Można zmieniać przepisy przyciskami góra/dół. Można także szukać przepis wg. nazwy (za pomocą uproszczonej klawiatury na ekranie)
+\item \textbf{Szukanie przepisów wród kategorii i ewentualne pobieranie} - po poprawnym połączeniu się z bazą internetową, można szukać przepisy na zupy wg. kategorii, wywietlać informacje w nich zawarte oraz pobierać do pamięci urządzenia. 
+\item \textbf{Wybrany przepis} - wywietla się przepis i informacje o nim (m.in. składniki, czas gotowania). Można wrócić do poprzedniej listy, rozpocząć przygotowanie do gotowania, bądź usunąć przepis z listy.
+\item \textbf{Maszyna sprawdza czy włożono składniki...} - sprawdzanie, czy maszyna jest gotowa na rozpoczęcie gotowania
+\item \textbf{Stan pracy maszyny} - ekran nie ma możliwosci interakcji z użytkownikiem, na ekranie wyswietlany jest postęp. Możliwe jest awaryjne zakończenie pracy, przez dwukrotne wcisnięcie przycisku "wyłącz".
+\item \textbf{Ekran zaleca, by wyjąć składniki} - koniec gotowania, interfejs przechodzi do stanu "wybór opcji", gdy garnek z zupą zostanie wyjęty lub zostanie nacisnięty odpowiedni przycis na ekranie.
 %następuje sprawdzenie następujących warunków: czy włożono odpowiednią ilosć wszystkich składników, czy zbiornik na wodę zawiera odpowiednią ilosć wody, czy 
 
 \end{itemize}
@@ -505,9 +496,6 @@ Opis niektórych stanów:
   \item Połączenie z komputerem
   \item Połączenie do zasilania
 \end{enumerate}
-
-\subsubsection{Dokładniejszy opis budowy i funkcjonalność}
-Prosty głośnik z wbudowaną kartą dźwiękową. Odtwarza wbudowaną melodię na polecenie komputera.
  
 \subsubsection{Wykorzystanie i relacje z podzespołami}
 Karta dźwiękowa to obowiązkowy element głośnika. Posiada wbudowaną prostą melodię. Jest połączony z komputerem oraz jest połączony do zasilania.
@@ -536,7 +524,7 @@ Komputerem (jednostką centralną) systemu wbudowanego jest mikrokontroler Atmel
 Komputer jest podłączony także do modułu obsługującego Wi-Fi oraz do czytnika kart SD. 
 
 \subsection{Komunikacja między komputerem a komponentami}
-Komputer komunikuje się z pozostałymi komponentami protokołem I$^2$C, gdzie urządzeniem typu \emph{master} jest komputer, a urządzeniami typu \emph{slave} są czujniki i urządzenia wykonawcze. Każde urządzenie typu \emph{slave} ma okrelony, osmiobitowy adres. 
+Komputer komunikuje się z pozostałymi komponentami protokołem I$^2$C, gdzie urządzeniem typu \emph{master} jest komputer, a urządzeniami typu \emph{slave} są czujniki i urządzenia wykonawcze. Każde urządzenie typu \emph{slave} ma okrelony, ośmiobitowy adres. 
 
 \section{Aplikacja mobilna}
 \subsection{Konfiguracja aplikacji}
